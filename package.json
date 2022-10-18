@@ -4,8 +4,27 @@
   "description": "区域内可移动滑块",
   "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "build": "cross-env NODE_ENV=production rollup -c",
+    "dev": "rollup -c -w"
   },
-  "author": "",
-  "license": "ISC"
+  "author": "chenxiaowan",
+  "license": "ISC",
+  "browser": "dist/index.js",
+  "devDependencies": {
+    "@babel/core": "^7.19.3",
+    "@babel/plugin-transform-runtime": "^7.19.1",
+    "@babel/preset-env": "^7.19.4",
+    "cross-env": "^7.0.3",
+    "node-sass": "^7.0.3",
+    "postcss": "^8.4.18",
+    "rollup": "^3.2.2",
+    "rollup-plugin-babel": "^4.4.0",
+    "rollup-plugin-commonjs": "^10.1.0",
+    "rollup-plugin-delete": "^2.0.0",
+    "rollup-plugin-node-resolve": "^5.2.0",
+    "rollup-plugin-postcss": "^4.0.2",
+    "rollup-plugin-typescript": "^1.0.1"
+  },
+  "dependencies": {}
 }

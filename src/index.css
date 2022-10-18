@@ -1,0 +1,43 @@
+.drag-container{
+    display: flex;
+    font-size: 14px;   
+}
+.left-menu{
+    width: 200px;
+}
+.right-con{
+    flex: 1;
+    border: solid 1px #dedede;
+    margin-left: 10px;
+    overflow-y: auto;
+    overflow-x: auto;
+}
+.move-div{
+    width: 100px;
+    height: 100px;
+    border: solid 1px #008000;
+    position: absolute;
+    cursor: move;
+}
+.zoom-wrapper{
+    position: relative;
+    overflow: hidden;
+    min-height: 100%;
+}
+.close-div{
+    width: 20px;
+    height: 20px;
+    position: absolute;
+    cursor: pointer;
+    top: -23px;
+    right: -23px;
+    background: #c00000;
+    border-radius: 50%;
+    text-align: center;
+    line-height: 20px;
+}
+.close-div:after{
+    content: '\00D7';
+    font-size: 16px;
+    color: #fff;
+}

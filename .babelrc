@@ -1,0 +1,13 @@
+{
+    "presets": [
+        [
+          "@babel/preset-env",
+          {
+            "modules": false // 不然 Babel 会在 Rollup 有机会作处理以前，将咱们的模块转成 CommonJS ，致使 Rollup 的一些处理失败。
+          }
+        ]
+      ],
+    "plugins": [
+      ["@babel/plugin-transform-runtime"] // 解决多个地方使用相同代码导致打包重复的问题
+    ]
+  }
