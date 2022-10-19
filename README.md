@@ -47,10 +47,10 @@ import Drag from 'dragmovablerea'
     </div>
 </template>
 <script>
-// import Drag from '@/utils/drag'
+
 import Drag from 'dragmovablerea'
 export default {
-    name: 'Test',
+    name: 'Example',
     data() {
         return {
             moveData: []
