@@ -105,7 +105,7 @@ export default {
 | 参数 | 说明 | 类型 | 默认值 |
 | --- | --- | --- | --- |
 | el |  可拓展父容器| String |——  |
-| options |  配置项|  | Object |—— |
+| options |  配置项|  Object |—— |
 
 ##### options配置项
 
@@ -122,4 +122,4 @@ export default {
 | 参数 | 说明 | 类型 | 默认值 |
 | --- | --- | --- | --- |
 | makeDraggable | 为某个dom绑定拖拽事件，可以放置到父容器中 | Function(el, data) |el是当前dom元素，data是绑定当前dom的数据  |
-| setScale |  设置父容器放大比例|  | Number | 1
+| setScale |  设置父容器放大比例| Number | 1 |
