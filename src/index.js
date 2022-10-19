@@ -144,7 +144,6 @@ export default class Drag {
             })
             div.ontouchstart = (e) => {
                 const touchs = e.targetTouches[0]
-                // 阻止默认浏览器drag事件导致mouseup事件丢失
                 let x = touchs.clientX / this.scale
                 let y = touchs.clientY / this.scale
                 this.el.ontouchmove = ev => {

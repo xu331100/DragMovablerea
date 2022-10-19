@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title></title>
+        <script src="https://cdn.jsdelivr.net/npm/vue@2.7.10/dist/vue.js"></script>
+		<script src="./index.js"></script>
+	</head>
+	<style>
+		.list li{
+			list-style: none;
+			height: 40px;
+            line-height: 40px;
+    	}
+	</style>
+	<body>
+		<div id="app">
+			<div class="drag-container">
+				<div class="left-menu">
+					<ul class="list">
+						<li data-o="1111">aaaadfafdad</li>
+						<li data-o="2222">bbb</li>
+						<li data-o="3333">ccc</li>
+						<li>dddd</li>
+						<li>eeee</li>
+						<li>ffff</li>
+						<li>gggg</li>
+						<li>hhhh</li>
+						<li>iiii</li>
+						<li>jjjj</li>
+						<li>kkkk</li>
+						<li>lllll</li>
+					</ul>
+				</div>
+				<div id="moveWrapper" class="right-con">
+					<div class="zoom-wrapper">
+						<template v-if="moveData.length > 0">
+							<div
+								v-for="(item, index) in moveData"
+								:key="index"
+								:style="'left:' + item.x + 'px;top:' + item.y + 'px'"
+								class="move-div"
+							>
+								<div class="close-div"></div>
+								{{ item.data }}
+							</div>
+						</template>
+					</div>
+				</div>
+			</div>
+		</div>
+		<script>
+			new Vue({
+				el: '#app',
+				data: {
+					moveData: []
+				},
+				mounted() {
+					this.$nextTick(() => {
+						this.init()
+					})
+
+					setTimeout(() => {
+						this.moveData = [
+							{ x: 100, y: 200 },
+							{ x: 200, y: 300 }
+						]
+					}, 500)
+				},
+				methods: {
+					init() {
+						const DragUtil = new Drag('#moveWrapper', {
+							getMoveData: (res) => {
+								this.moveData = res
+							}
+						})
+						const domArray = document.querySelectorAll('.left-menu li')
+						Array.from(domArray).forEach(el => {
+							const data = el.getAttribute('data-o')
+							DragUtil.makeDraggable(el, data)
+						})
+					}
+				}
+			})
+		</script>
+	</body>
+</html>

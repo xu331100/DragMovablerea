@@ -1,7 +1,9 @@
+
+(function(l, r) { if (!l || l.getElementById('livereloadscript')) return; r = l.createElement('script'); r.async = 1; r.src = '//' + (self.location.host || 'localhost').split(':')[0] + ':35729/livereload.js?snipver=1'; r.id = 'livereloadscript'; l.getElementsByTagName('head')[0].appendChild(r) })(self.document);
 (function (global, factory) {
   typeof exports === 'object' && typeof module !== 'undefined' ? module.exports = factory() :
   typeof define === 'function' && define.amd ? define(factory) :
-  (global = typeof globalThis !== 'undefined' ? globalThis : global || self, global.drag = factory());
+  (global = typeof globalThis !== 'undefined' ? globalThis : global || self, global.Drag = factory());
 })(this, (function () { 'use strict';
 
   function _defineProperty(obj, key, value) {
@@ -245,7 +247,6 @@
           });
           div.ontouchstart = function (e) {
             var touchs = e.targetTouches[0];
-            // 阻止默认浏览器drag事件导致mouseup事件丢失
             var x = touchs.clientX / _this6.scale;
             var y = touchs.clientY / _this6.scale;
             _this6.el.ontouchmove = function (ev) {

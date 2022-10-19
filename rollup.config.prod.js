@@ -6,7 +6,7 @@ import config from  './rollup.config.js'
 // const rimraf = require('rimraf');
 // rimraf('./dist/*',(err)=>{
 //     if(err){
-//         console.error(err)
+//         console.error(err)rol
 //     }else{
 //         console.log('Garbage removal program'.blue)
 //     }
