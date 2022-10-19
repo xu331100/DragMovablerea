@@ -100,6 +100,10 @@ export default {
 </style>
 
 ```
+### 效果
+![b60f6cc4f5355ab2046c1d795f3ceeba.gif](en-resource://database/514:0)
+
+
 ### 属性
 
 | 参数 | 说明 | 类型 | 默认值 |
