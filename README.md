@@ -105,7 +105,7 @@ export default {
 | 参数 | 说明 | 类型 | 默认值 |
 | --- | --- | --- | --- |
 | el |  可拓展父容器| String |——  |
-| options |  配置项|  | Object |
+| options |  配置项|  | Object |—— |
 
 ##### options配置项
 
