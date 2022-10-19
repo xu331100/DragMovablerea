@@ -1,5 +1,5 @@
 
-#### 特性
+### 特性
 
 * 支持触摸设备
 * 支持拖拽和跨容器拖拽
@@ -8,15 +8,15 @@
 * 无其他依赖包
 * 支持移动实时获取坐标
 
-##### 安装
+#### 安装
 ```
 npm i dragmovablerea
 ```
-##### 引入
+#### 引入
 ```
 import Drag from 'dragmovablerea'
 ```
-##### 基础用法
+### 基础用法
 ```
 
 <template>
@@ -100,14 +100,14 @@ export default {
 </style>
 
 ```
-##### 属性
+#### 属性
 
 | 参数 | 说明 | 类型 | 默认值 |
 | --- | --- | --- | --- |
 | el |  可拓展父容器| String |——  |
 | options |  配置项|  Object |—— |
 
-##### options配置项
+#### options配置项
 
 | 参数 | 说明 | 类型 | 默认值 |
 | --- | --- | --- | --- |
@@ -117,7 +117,7 @@ export default {
 | delIconClass | 移动滑块删除图标样式| String |.close-div  |
 | getMoveData | 实时获取滑块位置等参数| Function(data) |data是回调值   |
 
-##### 事件
+#### 事件
 
 | 参数 | 说明 | 类型 | 默认值 |
 | --- | --- | --- | --- |
