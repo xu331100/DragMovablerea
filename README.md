@@ -101,7 +101,7 @@ export default {
 
 ```
 ### 效果
-![b60f6cc4f5355ab2046c1d795f3ceeba.gif](en-resource://database/514:0)
+![image](https://github.com/xu331100/DragMovablerea/blob/master/move.gif)
 
 
 ### 属性
