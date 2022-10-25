@@ -67,7 +67,7 @@
                   e.preventDefault();
               });
               el.addEventListener('drop', (ev) => {
-                  const text = ev.dataTransfer && ev.dataTransfer.getData('Text');
+                  const text = ev.dataTransfer.getData('Text');
                   if (!ev || !text) {
                       return;
                   }
