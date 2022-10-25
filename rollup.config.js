@@ -5,7 +5,9 @@ import typescript from 'rollup-plugin-typescript'
 import postcss from 'rollup-plugin-postcss'
 import del from 'rollup-plugin-delete'
 import babel from 'rollup-plugin-babel'
-import commonjs from '@rollup/plugin-commonjs';
+import commonjs from '@rollup/plugin-commonjs'
+import { terser } from "rollup-plugin-terser"
+
 export default {
   input: 'src/index.ts', // 打包入口
   output: { // 打包出口
@@ -30,6 +32,7 @@ export default {
         tsconfig: './tsconfig.json'
     }), // 解析TypeScript
     postcss(),
+    terser(),
     del({
       targets: ['lib/**/*'] // 打包前删除之前的 bundle
     }),
