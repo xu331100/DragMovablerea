@@ -123,10 +123,11 @@ export default {
 | moveDivClass | 移动滑块样式| String |.move-div  |
 | delIconClass | 移动滑块删除图标样式| String |.close-div  |
 | getMoveData | 实时获取滑块位置等参数| Function(data) |data是回调值   |
-| updateMoveData | 刷新dom| Function() | 在页面moveData手动改变时调用  |
-### 事件
+
+### 方法
 
 | 参数 | 说明 | 类型 | 默认值 |
 | --- | --- | --- | --- |
 | makeDraggable | 为某个dom绑定拖拽事件，可以放置到父容器中 | Function(el, data) |el是当前dom元素，data是绑定当前dom的数据  |
 | setScale |  设置父容器放大比例| Number | 1 |
+| updateMoveData | 刷新dom| Function() | 在页面moveData手动改变时调用  |
