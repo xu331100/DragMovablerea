@@ -71,18 +71,23 @@ export default class Drag {
             }
         }
         this.setScale(this.scale)
-        this.initMoveData()
+        // this.updateMoveData()
     }
-    initMoveData() {
+    updateMoveData(data?: Array<moveDataObj>) {
         this.nextTick(() => {
-            const eles = document.querySelectorAll(this.moveDivClass)
+            this.moveData = []
+            const eles = this.pel.querySelectorAll(this.moveDivClass)
             Array.from(eles).map((ele: any, i) => {
-                this.moveData.push({
+                const obj: moveDataObj = {
                     x: ele.offsetLeft,
                     y: ele.offsetTop,
-                    data: ele.getAttribute('data-o')
-                })
-                this.moveDivEvent(ele, i)
+                    data: data ? data[i].data : ''
+                }
+                if (data && data[i]) {
+                    Object.assign(obj, data[i])
+                }
+                this.moveData.push(obj)
+                this.moveDivEvent(ele, i)  
                 this.bindDelEvent(ele.querySelector(this.delIconClass), i) // 绑定删除
             })
         })
@@ -160,9 +165,9 @@ export default class Drag {
     }
     // 绑定事件
     bindMoveDivEvent(index: number) {
-        const eles = document.querySelectorAll(this.moveDivClass)
+        const eles = this.pel.querySelectorAll(this.moveDivClass)
         Array.from(eles).map((ele:any, i) => {
-            if (index === i) {
+            if (index === i) {       
                 this.moveDivEvent(ele, index) // 绑定移动
                 this.bindDelEvent(ele.querySelector(this.delIconClass), index) // 绑定删除
             }
@@ -207,7 +212,7 @@ export default class Drag {
     }
     // 拖动放置不溢出边界值
     updatePosLimit(index: number) {
-        const eles = document.querySelectorAll(this.moveDivClass)
+        const eles = this.pel.querySelectorAll(this.moveDivClass)
         Array.from(eles).map((ele: any, i) => {
             if (index === i) {
                 this.limitDragPos(ele, ele.offsetLeft, ele.offsetTop, i)

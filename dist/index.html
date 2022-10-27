@@ -48,12 +48,14 @@
 					</div>
 				</div>
 			</div>
+			<div @click="updateData">手动更新moveData</div>
 		</div>
 		<script>
 			new Vue({
 				el: '#app',
 				data: {
-					moveData: []
+					moveData: [],
+					DragUtil: null
 				},
 				mounted() {
 					this.$nextTick(() => {
@@ -62,23 +64,37 @@
 
 					setTimeout(() => {
 						this.moveData = [
-							{ x: 100, y: 200 },
+							{ x: 100, y: 200, z: 1, data: 'test' },
 							{ x: 200, y: 300 }
 						]
+
+						// 同步moveData
+						this.DragUtil.updateMoveData(this.moveData)
 					}, 500)
 				},
 				methods: {
 					init() {
 						const DragUtil = new Drag('#moveWrapper', {
 							getMoveData: (res) => {
+								// console.log(res)
 								this.moveData = res
 							}
 						})
+						this.DragUtil = DragUtil
 						const domArray = document.querySelectorAll('.left-menu li')
 						Array.from(domArray).forEach(el => {
 							const data = el.getAttribute('data-o')
 							DragUtil.makeDraggable(el, data)
 						})
+					},
+					updateData() {
+						this.moveData = [
+							{ x: 400, y: 400, data: 'aaa', z: 1},
+							{ x: 200, y: 300, data: 'bbb'  },
+							{ x: 400, y: 300, data: 'ccc'  }
+						]
+						// 同步moveData
+						this.DragUtil.updateMoveData(this.moveData)
 					}
 				}
 			})

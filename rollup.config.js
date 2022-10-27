@@ -16,7 +16,7 @@ export default {
     name: 'Drag' // 必须，不然报标题的错
   },
   watch: {
-    include: ['src/*.js', 'index.js', 'styles/**'],
+    include: ['src/*.ts', 'src/*.js', 'styles/**'],
     exclude: 'node_modules/**',
     failAfterWarnings: true,
     clearScreen: false,

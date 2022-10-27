@@ -67,6 +67,9 @@ export default {
                 { x: 10, y: 20 },
                 { x: 20, y: 30 }
             ]
+            
+            // 同步moveData，刷新dom
+            this.DragUtil.updateMoveData(this.moveData)
         }, 500)
     },
     methods: {
@@ -120,7 +123,7 @@ export default {
 | moveDivClass | 移动滑块样式| String |.move-div  |
 | delIconClass | 移动滑块删除图标样式| String |.close-div  |
 | getMoveData | 实时获取滑块位置等参数| Function(data) |data是回调值   |
-
+| updateMoveData | 刷新dom| Function() | 在页面moveData手动改变时调用  |
 ### 事件
 
 | 参数 | 说明 | 类型 | 默认值 |
