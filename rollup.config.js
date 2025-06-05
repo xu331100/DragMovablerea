@@ -9,7 +9,7 @@ import commonjs from '@rollup/plugin-commonjs'
 import { terser } from "rollup-plugin-terser"
 
 export default {
-  input: 'src/index.ts', // 打包入口
+  input: 'src/index.ts', // 打包入口 测试
   output: { // 打包出口
     file: 'dist/index.js', // 最终打包出来的文件路径和文件名
     format: 'umd', // umd是兼容amd/cjs/iife的通用打包格式，适合浏览器
